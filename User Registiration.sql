@@ -1,7 +1,7 @@
-Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+sqlplus command line codes
 
 Enter user-name: sys as sysdba
-Enter password:
+Enter password: 123
 
 Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
@@ -23,7 +23,6 @@ Grant succeeded.
 SQL> CONNECT METIN/123
 ERROR:
 ORA-28001: parola s³resi doldu
-
 
 Changing password for METIN
 New password:

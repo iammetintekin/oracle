@@ -1,3 +1,5 @@
+sqlplus command line codes
+
 SQL> create table Personel
 (
   2  PERSONEL_ID NUMBER,

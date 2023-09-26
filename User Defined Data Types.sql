@@ -1,20 +1,20 @@
 CREATE TYPE ADRES_T AS OBJECT(
-CADDE VARCHAR(30),
-SEHIR VARCHAR2(30),
-ULKE_KODU CHAR(2),
-POSTA_KODU CHAR(5));
+    CADDE VARCHAR(30),
+    SEHIR VARCHAR2(30),
+    ULKE_KODU CHAR(2),
+    POSTA_KODU CHAR(5)
+);
 
 Type ADRES_T compiled
-
 ADRES_T tipi oluşturuldu
 
 CREATE TYPE adres_tab IS TABLE OF ADRES_T;
-
 ADRES_T adres_tab ' a bağlandı.
 
-create table MUSTERILER(
-MUSTERI_ID NUMBER(10),
-ADRES adres_tab
+create table MUSTERILER
+(
+    MUSTERI_ID NUMBER(10),
+    ADRES adres_tab
 )nested table ADRES STORE AS MUSTERI_ADRES;
 
 Table MUSTERILER created.
@@ -24,7 +24,8 @@ Name       Null? Type
 MUSTERI_ID       NUMBER(10) 
 ADRES            ADRES_TAB  
 
--- veri ekleme
+Veri ekleme
+
 INSERT INTO MUSTERILER
 VALUES(1, ADRES_TAB(
                 ADRES_T('İstanbul Caddesi','Ankara','TR',06100),
@@ -39,7 +40,8 @@ VALUES(2, ADRES_TAB(
                 )
 );
 
--- LİSTELEME
+Listeleme
+
 select M.MUSTERI_ID, A.*
     from MUSTERILER  M , TABLE(ADRES)  A;
 
