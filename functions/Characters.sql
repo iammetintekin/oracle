@@ -66,3 +66,5 @@ concat(concat(first_name,' '), last_name),
 concat(concat(concat(concat(first_name,' '), last_name),' is a '),job_id),
 (first_name || ' ' || last_name || ' is a ' || job_id)
 from employees;
+
+
